@@ -42,24 +42,24 @@ To sort the employees in a list by office or name I used javascripts sort method
 
 e.g:
 	
-	```
+	
 	if(props.sortValue === 'name') {
 	    newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
 	}
 	if(props.sortValue === 'office') {
 	     newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
 	}
-	```   
+	  
  The filtering was done using the string include method based upon the text inputs.
  
  e.g:
  
-	```
+	
 	employeesSorted.filter(
 	  f => f.name?.includes(props.textInput) || 
 	  f.office?.includes(props.textInput)|| 
-	  props.textInput === ''
-	```
+	  props.textInput === '')
+	
 ## Tools ->
 	Visual Studio Code
 	React 18.1.0
