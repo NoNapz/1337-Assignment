@@ -4,7 +4,7 @@ import classes from './EmployeeMenu.module.css';
 const EmployeeMenu = (props) => {
 
   return (
-      <div className={classes.wrapper}>
+      <div className={classes['menu-wrapper']}>
         <div> 
           <input type="text" value={props.onInput} onChange={(e) => props.onSetInput(e.target.value)} placeholder="Search for employee or office..."/>
         </div>

@@ -42,7 +42,7 @@ const EmployeeList = (props) => {
             <div className={classes.wrapper}>
                 {/* Scaled down the fetched array to simulate pagination */}
                 {employeesSorted && employeesSorted.filter(
-                    f => f.name.includes(props.onInput) || f.office.includes(props.onInput) || props.onInput === ''
+                    f => f.name.includes(props.onInput) || f.office?.includes(props.onInput)|| props.onInput === ''
                 ).map((e, idx) => {
                 return <EmployeeCard key={idx} name={e.name} office={e.office} image={e.imagePortraitUrl} github={e.gitHub} twitter={e.twitter} linkedIn={e.linkedIn} />
                 })}
