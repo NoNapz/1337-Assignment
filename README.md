@@ -1,10 +1,10 @@
 # 1337 - Code Assignment!
 
-## Description
+## Description ->
 
 TODO
 
-## Features and functional requirements.
+## Features and functional requirements ->
 
 1. Responsive Design
 2. Support for colorblindness
