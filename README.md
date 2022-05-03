@@ -6,13 +6,13 @@ TODO
 
 ## Features and functional requirements.
 
-1: Responsive Design.
-2: Support for colorblindness
-3: Screen Reader Functionality
-4: Use modern CSS throughout the application.
-5: Sort by name and office
-6: Filter by name and office
-7: ****TODO**** (Unit Testing)
+> Responsive Design
+> Support for colorblindness
+> Screen Reader Functionality
+> Use modern CSS throughout the application.
+> Sort by name and office
+> Filter by name and office
+> ****TODO**** (Unit Testing)
 
 Responsive design with a mobile first approach made this application quick and easy to get going. 
 Utializing CSS powerful Clamp tool to shrink essential elements when needed.
