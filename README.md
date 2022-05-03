@@ -42,7 +42,7 @@ To sort the employees in a list by office or name I used javascripts sort method
 
 e.g:
 	
-	```JavaScript
+	```
 	if(props.sortValue === 'name') {
 	    newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
 	}
@@ -53,7 +53,8 @@ e.g:
  The filtering was done using the string include method based upon the text inputs.
  
  e.g:
-	```JavaScript
+ 
+	```
 	employeesSorted.filter(
 	  f => f.name?.includes(props.textInput) || 
 	  f.office?.includes(props.textInput)|| 
