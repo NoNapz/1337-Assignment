@@ -6,13 +6,13 @@ TODO
 
 ## Features and functional requirements.
 
-> Responsive Design
-> Support for colorblindness
-> Screen Reader Functionality
-> Use modern CSS throughout the application.
-> Sort by name and office
-> Filter by name and office
-> ****TODO**** (Unit Testing)
+1. Responsive Design
+2. Support for colorblindness
+3. Screen Reader Functionality
+4. Use modern CSS throughout the application.
+5. Sort by name and office
+6. Filter by name and office
+7. ****TODO**** (Unit Testing)
 
 Responsive design with a mobile first approach made this application quick and easy to get going. 
 Utializing CSS powerful Clamp tool to shrink essential elements when needed.
@@ -34,26 +34,28 @@ major issues with it.
 
 Websites performance, screenreading seem to be more than fine on this assignment!
 
-![Alt text](https://gyazo.com/1bf160ae4a72be035b7ff502f55269c6)
+![Alt text1](https://i.gyazo.com/1bf160ae4a72be035b7ff502f55269c6.png)
 
 When it comes to sorting and filtering it was done by passing props between components.
 
 To sort the employees in a list by office or name I used javascripts sort method.
     e.g:
-       if(props.sortValue === 'name') {
-            newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
-        }
-       if(props.sortValue === 'office') {
-             newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
-        }
-        
+	```jsx
+	if(props.sortValue === 'name') {
+	    newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
+	}
+	if(props.sortValue === 'office') {
+	     newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
+	}
+	```   
  The filtering was done using the string include method based upon the text inputs.
     e.g:
-      employeesSorted.filter(
-          f => f.name?.includes(props.textInput) || 
-          f.office?.includes(props.textInput)|| 
-          props.textInput === ''
- 
+	```jsx
+	employeesSorted.filter(
+	  f => f.name?.includes(props.textInput) || 
+	  f.office?.includes(props.textInput)|| 
+	  props.textInput === ''
+	```
 ## Tools ->
 	Visual Studio Code
 	React 18.1.0
