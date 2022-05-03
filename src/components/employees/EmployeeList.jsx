@@ -27,24 +27,18 @@ const EmployeeList = (props) => {
         setEmployeesSorted(newEmployees);
     }, [props.onSort, employees]);
 
-    // Spinner placeholder
-    if(load) {
-        return <p>Loading...</p>
-    }
 
-    // Error message placeholder
-    if(error) {
-        return <p>Error Fetching data...</p>
-    } 
+    if(load) return <p>Loading...</p>
+
+    if(error) return <p>Error Fetching data...</p>
 
     return (
         <React.Fragment>
             <div className={classes.wrapper}>
-                {/* Scaled down the fetched array to simulate pagination */}
                 {employeesSorted && employeesSorted.filter(
                     f => f.name.includes(props.onInput) || f.office?.includes(props.onInput)|| props.onInput === ''
                 ).map((e, idx) => {
-                return <EmployeeCard key={idx} name={e.name} office={e.office} image={e.imagePortraitUrl} github={e.gitHub} twitter={e.twitter} linkedIn={e.linkedIn} />
+                return <EmployeeCard key={idx} employee={e} />
                 })}
             </div>
         </React.Fragment>
