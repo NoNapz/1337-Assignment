@@ -40,7 +40,7 @@
     cursor: pointer;
     justify-self: end;
     color: var(--detail-color);
-    margin: 0 .2rem;
+    padding: 0 .2rem;
 }
 
 .socials {
@@ -54,6 +54,7 @@
         height: 100%;
         text-align: center;
         border-left: none;
+        overflow: hidden;
     }
     .card .details {
         padding-bottom: 1rem;
@@ -73,6 +74,10 @@
         align-self: center;
     }
     .card button {
-        margin: 0 .4rem;
+        padding: 0 .4rem;
+        transition: .3s;
+    }
+    .card button:hover {
+        color: #000000;
     }
 }
