@@ -15,7 +15,6 @@ const EmployeeList = (props) => {
     const employeesPerPage = 12;
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * employeesPerPage;
-    const displayUsers = employeesSorted.slice(pagesVisited, pagesVisited + employeesPerPage)
     const pageCount = Math.ceil(employeesSorted.length / employeesPerPage);
 
     useEffect(() => {
@@ -24,16 +23,16 @@ const EmployeeList = (props) => {
     }, [data]);
 
     useEffect(() => {
-        if(!employees || !props.onSort) return;
+        if(!employees || !props.sortValue) return;
         let newEmployees = [...employees];
-        if(props.onSort === 'name') {
-            newEmployees.sort((a,b) => a[props.onSort] > b[props.onSort] ? 1 : -1);
+        if(props.sortValue === 'name') {
+            newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
         }
-        if(props.onSort === 'office') {
-             newEmployees.sort((a,b) => a[props.onSort] > b[props.onSort] ? 1 : -1);
+        if(props.sortValue === 'office') {
+             newEmployees.sort((a,b) => a[props.sortValue] > b[props.sortValue] ? 1 : -1);
         }
         setEmployeesSorted(newEmployees);
-    }, [props.onSort, employees]);
+    }, [props.sortValue, employees]);
 
     const changePageHandler = ({selected}) => {
         setPageNumber(selected);
@@ -46,9 +45,9 @@ const EmployeeList = (props) => {
     return (
         <section>
             <div className={classes.wrapper}>
-                {employeesSorted && displayUsers.filter(
-                    f => f.name.includes(props.onInput) || f.office?.includes(props.onInput)|| props.onInput === ''
-                ).map((e, idx) => {
+                {employeesSorted && employeesSorted.filter(
+                    f => f.name?.includes(props.textInput) || f.office?.includes(props.textInput)|| props.textInput === ''
+                ).slice(pagesVisited, pagesVisited + employeesPerPage).map((e, idx) => {
                 return <EmployeeCard key={idx} employee={e} />
                 })}
             </div>

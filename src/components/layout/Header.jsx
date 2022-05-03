@@ -4,7 +4,7 @@ import classes from './Header.module.css';
 const Header = () => {
   return (
     <header className={classes.header}>
-        <h3>13|37 Assignment</h3>
+        <h1>13|37 Assignment</h1>
     </header>
   )
 }

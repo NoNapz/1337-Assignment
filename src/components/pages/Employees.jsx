@@ -9,8 +9,8 @@ function Employees() {
 
   return (
     <Card>
-        <EmployeeMenu onSetSort={setSortValue} onSetInput={setInputValue} onInput={inputValue} />
-        <EmployeeList onSort={sortValue} onInput={inputValue}/>
+        <EmployeeMenu setSort={setSortValue} setInput={setInputValue} textInput={inputValue} />
+        <EmployeeList sortValue={sortValue} textInput={inputValue}/>
     </Card>
   )
 }
