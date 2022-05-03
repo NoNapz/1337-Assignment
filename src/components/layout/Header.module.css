@@ -15,7 +15,3 @@
     color: var(--main-color--text);
     letter-spacing: .1rem;
 }
-
-.header span {
-    color: var(--detail-color);
-}

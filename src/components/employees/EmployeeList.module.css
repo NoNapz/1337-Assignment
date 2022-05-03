@@ -1,3 +1,5 @@
+@import '../../variables.css';
+
 .wrapper {
     margin: 1rem;
     display: grid;
@@ -7,9 +9,40 @@
     padding-bottom: 1rem;
 }
 
+.footer {
+    background-color: var(--main-color);
+}
+
+.pagination {
+    font-size: clamp(.8rem, 2.5vw, 1.2rem);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 70%;
+    list-style: none;
+    color: var(--main-color--text);
+}
+
+.pagination a {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    color: var(--detail-color-secondary);
+}
+
+.paginationA {
+    color: var(--detail-color-secondary);
+}
+
 @media screen and (min-width: 768px) {
     .wrapper{
         grid-template-columns: repeat(auto-fit,
         minmax(14rem, 18rem));
+    }
+    .pagination a {
+        padding: 1rem;
     }
 }

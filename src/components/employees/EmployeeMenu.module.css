@@ -43,6 +43,6 @@
 }
 
 .menu-wrapper input:focus {
-    border-color: var(--highlight-color);
+    border-color: var(--detail-color-secondary);
     box-shadow: var(--box-shadow);
 }
