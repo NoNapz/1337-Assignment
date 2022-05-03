@@ -2,9 +2,10 @@
     --main-color: #1F2833;
     --main-color--text: #ffffff;
     --background-color: #C5C6C7;
-    --background-color-secondary: #D0D7D8;
+    --background-color-secondary: #777777;
     --border-color: #222222;
-    --highlight-color: #66FCF1;
+    --highlight-color: #FF0000;
+    --detail-color: #FF0000 ;
     --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     --border-radius: 5px;
 }
