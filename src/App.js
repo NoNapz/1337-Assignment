@@ -1,9 +1,14 @@
 import Employees from "./components/pages/Employees";
+import Header from "./components/layout/Header";
+import Wrapper from "./components/UI/Wrapper";
 
 function App() {
   return (
     <div>
-      <Employees />
+      <Header />
+      <Wrapper>
+        <Employees />
+      </Wrapper>
     </div>
   );
 }
