@@ -17,8 +17,9 @@ function EmployeeCard(props) {
             <div className={classes.body}>
                 <div className={classes.details}>
                   <h2>{employee.name}</h2>
-                  <span>{employee.office}</span>
+                  <p>{employee.office}</p>
                 </div>
+                // If no social media, do not print, else print the existing ones.
                 <div className={!employee.github && !employee.twitter && !employee.linkedIn ? '' :  (classes.socials)}>
                     {employee.gitHub && <button onClick={() => window.open(`https://github.com/${employee.gitHub}`, "_blank")}> <AiOutlineGithub /> </button>}
                     {employee.twitter && <button onClick={() => window.open(`https://twitter.com/${employee.twitter}`, "_blank")}> <AiOutlineTwitter /> </button>}

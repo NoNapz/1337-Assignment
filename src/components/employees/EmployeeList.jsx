@@ -38,13 +38,14 @@ const EmployeeList = (props) => {
         setPageNumber(selected);
     }
 
+    //Placeholders for spinner and error message handling.
     if(load) return <p>Loading...</p>
-
     if(error) return <p>Error Fetching data...</p>
 
     return (
         <section>
             <div className={classes.wrapper}>
+                {/* filter if input has value, then slice the array for pagination display */}
                 {employeesSorted && employeesSorted.filter(
                     f => f.name?.includes(props.textInput) || f.office?.includes(props.textInput)|| props.textInput === ''
                 ).slice(pagesVisited, pagesVisited + employeesPerPage).map((e, idx) => {
