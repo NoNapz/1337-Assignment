@@ -38,7 +38,7 @@
 4. Use modern CSS throughout the application.
 5. Sort by name and office
 6. Filter by name and office
-7. Front-to-end testing
+7. End-to-end testing
 
 Responsive design with a mobile first approach, because of the importance of having sites be available to as many people as possible.
 
