@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import EmployeeCard from './EmployeeCard';
 import useFetch from '../hooks/useFetch';
 import classes from './EmployeeList.module.css';
@@ -6,16 +6,14 @@ import ReactPaginate from 'react-paginate';
 
 const API_ENDPOINT = process.env.REACT_APP_1337_API_ENDPOINT;
 
-const EmployeeList = (props) => {
+const EmployeeList = ({ ...props }) => {
     const {data, load, error} = useFetch(`${API_ENDPOINT}`);
     const [employees, setEmployees] = useState([]);
     const [employeesSorted, setEmployeesSorted] = useState([]);
 
-    // Pagination
     const employeesPerPage = 12;
     const [pageNumber, setPageNumber] = useState(0);
     const pagesVisited = pageNumber * employeesPerPage;
-    const pageCount = Math.ceil(employeesSorted.length / employeesPerPage);
 
     useEffect(() => {
         if(!data) return;
@@ -34,6 +32,19 @@ const EmployeeList = (props) => {
         setEmployeesSorted(newEmployees);
     }, [props.sortValue, employees]);
 
+
+    const filterEmployees = useMemo(() => {
+        if(employeesSorted !== null) {
+            setPageNumber(0)
+            return employeesSorted.filter(
+                f => f.name?.includes(props.textInput) || f.office?.includes(props.textInput)|| props.textInput === ''
+            )
+        }
+        return []
+    }, [employeesSorted, props.textInput])
+
+    let pageCount = Math.ceil(filterEmployees.length / employeesPerPage);
+
     const changePageHandler = ({selected}) => {
         setPageNumber(selected);
     }
@@ -46,10 +57,8 @@ const EmployeeList = (props) => {
         <section>
             <div className={classes.wrapper}>
                 {/* filter if input has value, then slice the array for pagination display */}
-                {employeesSorted && employeesSorted.filter(
-                    f => f.name?.includes(props.textInput) || f.office?.includes(props.textInput)|| props.textInput === ''
-                ).slice(pagesVisited, pagesVisited + employeesPerPage).map((e, idx) => {
-                return <EmployeeCard key={idx} employee={e} />
+                {employeesSorted && filterEmployees.slice(pagesVisited, pagesVisited + employeesPerPage).map((e) => {
+                return <EmployeeCard key={e.email} employee={e} />
                 })}
             </div>
             <div className={classes.footer}>
